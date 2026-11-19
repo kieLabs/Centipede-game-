@@ -1,11 +1,13 @@
 export function bodyHitsTrail(head, owner) {
-  // A worm head is never a valid collision target for its own body.
-  // Compare stable identity as well as object identity: snapshots/wrappers of
-  // the same worm must never be mistaken for a rival worm.
   if (!head || !owner || head === owner || (head.id && owner.id && head.id === owner.id)) return false;
-  for (let i = 14; i < owner.trail.length; i += 4) {
-    const point = owner.trail[i];
-    if (Math.hypot(head.x - point.x, head.y - point.y) < (head.r || 12) + owner.r * .78) return true;
+  const hitR = (head.r || 12) + owner.r * .78;
+  const hitRSq = hitR * hitR;
+  const hx = head.x, hy = head.y;
+  const trail = owner.trail;
+  for (let i = 14; i < trail.length; i += 4) {
+    const point = trail[i];
+    const dx = hx - point.x, dy = hy - point.y;
+    if (dx * dx + dy * dy < hitRSq) return true;
   }
   return false;
 }
