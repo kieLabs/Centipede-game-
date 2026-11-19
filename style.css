@@ -95,5 +95,8 @@ body{position:fixed;inset:0}
   .gameover-actions{gap:8px}
   .gameover-actions .play-button,.gameover-actions .continue-ad-button,.gameover-actions .secondary-button{min-height:44px}
 }
+
+
+
 /* Colour swatches are rendered as visual chips; hex strings are never displayed as labels. */
 .theme-preview{height:24px;border-radius:8px;border:3px solid #dceee3;margin:0 0 8px;background:#92c96b}.shop-theme-preview{height:42px;margin-bottom:10px}

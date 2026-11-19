@@ -1,4 +1,4 @@
-const CACHE_NAME = 'centipede-battle-gamerkie-v1';
+const CACHE_NAME = 'centipede-battle-gamerkie-v2';
 const APP_SHELL = [
   './', './index.html', './style.css', './manifest.webmanifest',
   './js/config.js', './js/logic.js', './js/storage.js', './js/worm.js',
